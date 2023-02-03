@@ -25,4 +25,36 @@ function div(a,b){
 }
 
 
-console.log(div(3,2));
+function operate(){
+    let op,a,b;
+    op = prompt("Enter a operator");
+    a = parseInt(prompt("Enter the first number"));
+    b = parseInt(prompt("Enter the second number"));
+
+    switch(op){
+        case '+':
+            console.log(add(a,b));
+            break;
+        
+         case '-':
+            console.log(sub(a,b));
+            break;
+
+
+        case '*':
+            console.log(mul(a,b));
+            break;
+
+
+
+        case '/':
+            console.log(div(a,b));
+            break;
+
+        default:
+            console.log("Enter a valid operator");
+    }
+
+}
+
+
