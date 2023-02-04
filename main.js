@@ -189,4 +189,13 @@ opbtns.forEach((op) => {
 
        
     })
+});
+
+
+const eq = document.querySelector('.eq');
+eq.addEventListener('click',function(){
+    nlist.push(disval);
+    
+    operate();
+
 })
