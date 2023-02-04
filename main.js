@@ -24,12 +24,16 @@ function div(a,b){
     return quo;
 }
 
+let res = 0;
+let disval="";
+let opclick = 0;
+let nlist =[];
+let oplist =[];
 
 function operate(){
     let op,a,b;
     op = oplist[0];
     console.log(op);
-    let res;
     a = parseInt(nlist[0]);
     b = parseInt(nlist[1]);
 
@@ -67,17 +71,15 @@ function operate(){
     const dis = document.querySelector('.display');
     dis.innerHTML=res;
     nlist=[];
-    nlist.push(res);
+    //nlist.push(res);
+    
     oplist=[];
 
 
 }
 
 
-let disval = 0;
-let opclick = 0;
-let nlist =[];
-let oplist =[];
+
 
 const dis = document.querySelector('.display');
 const nbtns = document.querySelectorAll('.dig');
@@ -107,8 +109,10 @@ clr.addEventListener('click',function(){
 const opbtns = document.querySelectorAll('.op');
 opbtns.forEach((op) => {
     op.addEventListener('click',function(e){
+        
         nlist.push(disval);
         disval=0;
+        
         oper = e.target.className.split(" ")[1];
         
         if(oplist.length<1){
@@ -146,6 +150,7 @@ opbtns.forEach((op) => {
         else if(nlist.length==2){
 
             operate();
+            nlist.push(res);
 
             switch(oper){
 
@@ -194,8 +199,11 @@ opbtns.forEach((op) => {
 
 const eq = document.querySelector('.eq');
 eq.addEventListener('click',function(){
+    
     nlist.push(disval);
     
     operate();
 
+
+    disval=res;
 })
