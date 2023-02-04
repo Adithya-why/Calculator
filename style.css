@@ -40,7 +40,7 @@ border: 1px solid black;
 }
 
 
-button.dig,button.clr,button.op{
+button.dig,button.clr,button.op,.eq{
     width: 40px;
     height: 40px;
 }

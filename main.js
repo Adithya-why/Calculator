@@ -1,3 +1,12 @@
+let res = 0;
+let disval="";
+let opclick = 0;
+let nlist =[];
+let oplist =[];
+
+const dis = document.querySelector('.display');
+const nbtns = document.querySelectorAll('.dig');
+
 function add(a,b){
     let sum=0;
     sum = a+b;
@@ -24,11 +33,6 @@ function div(a,b){
     return quo;
 }
 
-let res = 0;
-let disval="";
-let opclick = 0;
-let nlist =[];
-let oplist =[];
 
 function operate(){
     let op,a,b;
@@ -36,8 +40,6 @@ function operate(){
     console.log(op);
     a = parseInt(nlist[0]);
     b = parseInt(nlist[1]);
-
-    console.log(a,b);
     
     switch(op){
         case '+':
@@ -60,19 +62,12 @@ function operate(){
         case '/':
             res=div(a,b);
             break;
-
-
-
-        
+  
         
     }
 
-
-    const dis = document.querySelector('.display');
     dis.innerHTML=res;
     nlist=[];
-    //nlist.push(res);
-    
     oplist=[];
 
 
@@ -81,8 +76,7 @@ function operate(){
 
 
 
-const dis = document.querySelector('.display');
-const nbtns = document.querySelectorAll('.dig');
+
 nbtns.forEach(dig => {
     dig.addEventListener('click',function(e){
        
@@ -108,7 +102,7 @@ clr.addEventListener('click',function(){
 
 const opbtns = document.querySelectorAll('.op');
 opbtns.forEach((op) => {
-    op.addEventListener('click',function(e){
+         op.addEventListener('click',function(e){
         
         nlist.push(disval);
         disval=0;
@@ -182,17 +176,7 @@ opbtns.forEach((op) => {
                 }
 
         }
-
-
-
-
-        console.log(nlist);
-        console.log(oplist);
-       
-
-        
-
-       
+          
     })
 });
 
@@ -206,4 +190,4 @@ eq.addEventListener('click',function(){
 
 
     disval=res;
-})
+});
