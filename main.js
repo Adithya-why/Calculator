@@ -58,15 +58,19 @@ function operate(){
 }
 
 
-let val = 0;
+let disval = 0;
+let opclick = 0;
+let nlist =[];
+let oplist =[];
 
+const dis = document.querySelector('.display');
 const nbtns = document.querySelectorAll('.dig');
 nbtns.forEach(dig => {
     dig.addEventListener('click',function(e){
-        const dis = document.querySelector('.display');
+       
         let clsn = (e.target.className).split(" ")[1];
         dis.innerHTML+=clsn;
-        val = dis.innerHTML;
+        disval = dis.innerHTML;
     
     })
 
@@ -76,9 +80,8 @@ nbtns.forEach(dig => {
 
 const clr = document.querySelector('.clr');
 clr.addEventListener('click',function(){
-    const dis = document.querySelector('.display');
     dis.innerHTML = 0;
-    val = 0;
+    disval = 0;
 })
 
 
@@ -86,6 +89,39 @@ clr.addEventListener('click',function(){
 const opbtns = document.querySelectorAll('.op');
 opbtns.forEach((op) => {
     op.addEventListener('click',function(e){
+        console.log(disval);
+    
+        oper = e.target.className.split(" ")[1];
+       // evalist.push(oper);
+    
+        const dis = document.querySelector('.display');
+        switch(oper){
+
+
+        case '+':
+            dis.innerHTML+="+"
+            break;
         
+        case '-':
+            dis.innerHTML+="-"
+            break;
+
+
+        case '*':
+            dis.innerHTML+="*"
+            break;
+
+
+
+        case '/':
+            dis.innerHTML+="/"
+            break;
+
+            
+        }
+
+        
+
+       
     })
 })
