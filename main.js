@@ -27,33 +27,49 @@ function div(a,b){
 
 function operate(){
     let op,a,b;
-    op = prompt("Enter a operator");
-    a = parseInt(prompt("Enter the first number"));
-    b = parseInt(prompt("Enter the second number"));
+    op = oplist[0];
+    console.log(op);
+    let res;
+    a = parseInt(nlist[0]);
+    b = parseInt(nlist[1]);
 
+    console.log(a,b);
+    
     switch(op){
         case '+':
-            console.log(add(a,b));
+           
+            res = add(a,b);            
+
             break;
         
          case '-':
-            console.log(sub(a,b));
+            res= sub(a,b);
             break;
 
 
         case '*':
-            console.log(mul(a,b));
+            res=mul(a,b);
             break;
 
 
 
         case '/':
-            console.log(div(a,b));
+            res=div(a,b);
             break;
 
-        default:
-            console.log("Enter a valid operator");
+
+
+        
+        
     }
+
+
+    const dis = document.querySelector('.display');
+    dis.innerHTML=res;
+    nlist=[];
+    nlist.push(res);
+    oplist=[];
+
 
 }
 
@@ -94,7 +110,8 @@ opbtns.forEach((op) => {
         nlist.push(disval);
         disval=0;
         oper = e.target.className.split(" ")[1];
-        const dis = document.querySelector('.display');
+        
+        if(oplist.length<1){
         switch(oper){
 
 
@@ -123,6 +140,46 @@ opbtns.forEach((op) => {
 
             
         }
+        }
+
+
+        else if(nlist.length==2){
+
+            operate();
+
+            switch(oper){
+
+
+                case '+':
+                    dis.innerHTML+="+"
+                    oplist.push('+');
+                    break;
+                
+                case '-':
+                    dis.innerHTML+="-";
+                    oplist.push('-');
+                    break;
+        
+        
+                case '*':
+                    dis.innerHTML+="*";
+                    oplist.push('*');
+                    break;
+        
+        
+        
+                case '/':
+                    dis.innerHTML+="/";
+                    oplist.push('/');
+                    break;
+        
+                    
+                }
+
+        }
+
+
+
 
         console.log(nlist);
         console.log(oplist);
