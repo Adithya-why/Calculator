@@ -58,3 +58,34 @@ function operate(){
 }
 
 
+let val = 0;
+
+const nbtns = document.querySelectorAll('.dig');
+nbtns.forEach(dig => {
+    dig.addEventListener('click',function(e){
+        const dis = document.querySelector('.display');
+        let clsn = (e.target.className).split(" ")[1];
+        dis.innerHTML+=clsn;
+        val = dis.innerHTML;
+    
+    })
+
+    
+});
+
+
+const clr = document.querySelector('.clr');
+clr.addEventListener('click',function(){
+    const dis = document.querySelector('.display');
+    dis.innerHTML = 0;
+    val = 0;
+})
+
+
+
+const opbtns = document.querySelectorAll('.op');
+opbtns.forEach((op) => {
+    op.addEventListener('click',function(e){
+        
+    })
+})
