@@ -70,7 +70,7 @@ nbtns.forEach(dig => {
        
         let clsn = (e.target.className).split(" ")[1];
         dis.innerHTML+=clsn;
-        disval = dis.innerHTML;
+        disval += clsn;
     
     })
 
@@ -82,6 +82,8 @@ const clr = document.querySelector('.clr');
 clr.addEventListener('click',function(){
     dis.innerHTML = 0;
     disval = 0;
+    nlist=[];
+    oplist=[];
 })
 
 
@@ -89,36 +91,42 @@ clr.addEventListener('click',function(){
 const opbtns = document.querySelectorAll('.op');
 opbtns.forEach((op) => {
     op.addEventListener('click',function(e){
-        console.log(disval);
-    
+        nlist.push(disval);
+        disval=0;
         oper = e.target.className.split(" ")[1];
-       // evalist.push(oper);
-    
         const dis = document.querySelector('.display');
         switch(oper){
 
 
         case '+':
             dis.innerHTML+="+"
+            oplist.push('+');
             break;
         
         case '-':
-            dis.innerHTML+="-"
+            dis.innerHTML+="-";
+            oplist.push('-');
             break;
 
 
         case '*':
-            dis.innerHTML+="*"
+            dis.innerHTML+="*";
+            oplist.push('*');
             break;
 
 
 
         case '/':
-            dis.innerHTML+="/"
+            dis.innerHTML+="/";
+            oplist.push('/');
             break;
 
             
         }
+
+        console.log(nlist);
+        console.log(oplist);
+       
 
         
 
