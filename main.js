@@ -30,6 +30,14 @@ function mul(a,b){
 function div(a,b){
     let quo=0;
     quo = a/b;
+    if(b==0){
+        document.querySelector('.display').innerHTML="Screw You";
+        wait(2000);
+       const clr= document.querySelector('.clr');
+       clr.click();
+
+
+    }
     return quo;
 }
 
@@ -77,7 +85,7 @@ function operate(){
   
         
     }
-
+    //if(res.toString().split('.')[1].length>10){res = parseFloat(res.toFixed(2));}
     dis.innerHTML=res;
     nlist=[];
     oplist=[];
