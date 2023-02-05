@@ -34,6 +34,13 @@ function div(a,b){
 }
 
 
+function mod(a,b){
+    let rem = 0;
+    rem = a%b;
+    return rem;
+}
+
+
 function operate(){
     let op,a,b;
     op = oplist[0];
@@ -61,6 +68,11 @@ function operate(){
 
         case '/':
             res=div(a,b);
+            break;
+
+
+        case '%':
+            res=mod(a,b);
             break;
   
         
@@ -136,6 +148,12 @@ opbtns.forEach((op) => {
             oplist.push('/');
             break;
 
+
+
+        case '%':
+            dis.innerHTML+="%";
+            oplist.push('%');
+            break;
             
         }
         }
@@ -173,6 +191,12 @@ opbtns.forEach((op) => {
                     break;
         
                     
+
+                case '%':
+                    dis.innerHTML+="%";
+                    oplist.push('%');
+                    break;
+                        
                 }
 
         }
