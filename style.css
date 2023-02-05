@@ -79,4 +79,19 @@ button.dig,button.clr,button.op,.eq{
 }
 
 
+button.eq{
+    background-color:green ;
+    color: white;
+}
+
+button.op{
+    background-color: orangered;
+    color: white;
+}
+
+
+button.clr{
+    background-color: blue;
+    color: white;
+}
 
