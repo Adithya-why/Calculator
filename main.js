@@ -4,6 +4,9 @@ let opclick = 0;
 let nlist =[];
 let oplist =[];
 
+
+
+
 const dis = document.querySelector('.display');
 const nbtns = document.querySelectorAll('.dig');
 
